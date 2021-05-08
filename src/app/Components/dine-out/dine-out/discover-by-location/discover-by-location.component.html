@@ -1,0 +1,30 @@
+<section class="glide">
+    <div >
+        <button class="btn btn-sm"   (click) ='getRestaurantsByLocation("القاهرة")'  style="float: right;padding-right: 20px; background-color: orangered; color: white;font-weight: bold; font-size: 20px;padding-left: 20px; ">{{"DineOutModule.SeeAll" |translate}}</button>
+        <h2>{{"DineOutModule.DiscoverByLocation"|translate}}</h2>
+    </div>
+   
+    <div class="row">
+   
+
+        <div   (click)="navigateToRestaurant(restaurant)"     *ngFor='let restaurant of restaurantsByLocation ' class="card col-lg-2" style="width:25rem; margin-left: 20px;margin-top: 30px;">
+            <img class="card-img" style="height: 50%;"  src={{restaurant.img}} alt="Card image cap">
+            <div class="card-body" >
+               
+                <h5  *ngIf="lang==='en'" class=" text-center" style="color: grey">{{restaurant.name}}</h5>
+                <h5  *ngIf="lang==='ar'" class=" text-center" style="color: grey">{{restaurant.arName}}</h5>
+                <h6  *ngIf="lang==='en'" class="text-center">Location: {{restaurant.Location}}</h6>
+                <h6  *ngIf="lang==='ar'" class="text-center">Location: {{restaurant.arLocation}}</h6>
+                <h6 class="text-center">hotLine: {{restaurant.hotLine}}</h6>
+                <!-- <h6 class="text-center">Dish: {{dish.name}}</h6> -->
+
+
+            </div>
+          
+            
+        </div>
+
+   
+    </div>
+
+</section>

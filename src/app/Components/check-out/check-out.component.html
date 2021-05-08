@@ -1,0 +1,142 @@
+<div class="cotainer pt-4">
+    <div class="row pl-3 justify-content-around">
+        <section id="main" class="col-md-6">
+            <h1>Your Order Form {{restName}}</h1>
+            <form #clietInfo="ngForm">
+                
+             <div class="form-row">  
+                    <div class="form-group col-md-12">
+                        <label for="phoneNumber">Phone</label>
+                        <input type="number" class="form-control" pattern="(^[1])([0-9]{9})" name="clientPhone" [(ngModel)]='clientPhone'  id="phoneNumber" placeholder="mobile number" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="deliveryaddress">Address</label>
+                        <input [disabled]='registeredAddress' name="dleiveryaddress" [(ngModel)]='deliveryAddress' type="text" class="form-control" id="deliveryaddress" placeholder="123 st, Cairo">
+                    </div>
+                    
+                    <!-- <div class="form-row col-md-12">
+                        <div class="form-group col-lg-6">
+                            <label for="inputCity">City</label>
+                            <select [disabled]='registeredAddress' id="inputCity" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="inputState">Area</label>
+                            <select [disabled]='registeredAddress' id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        
+                    </div> -->
+
+                    <div class="form-row col-md-12 p-4 border-bottom border-top mt-4">
+                        <div class="form-check col-md-12">
+                            <input class="form-check-input" [checked]='registeredAddress' (change)='registeredAddress=!registeredAddress' type="checkbox" name="registeredAdress" id="registeredAdress" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                               Deliver to registered address
+                            </label>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-check col-md-12 mt-4 pb-3">
+                        <div class="form-row col-md-12">
+                            <h2>Payment</h2>
+                        </div>
+                      <form [formGroup]='paymentMethod'>
+                        <div class="form-row col-md-12 pl-4">
+                            <input class="form-check-input" type="radio" formControlName="method" id="creditCard" value="Credit" checked>
+                            <label class="form-check-label" for="creditCard">
+                             Credit Card 
+                            </label>
+                        </div>
+                        <div class="form-check col-md-12">
+                            <input class="form-check-input" type="radio" formControlName="method" id="debitCard" value="Debit">
+                            <label class="form-check-label" for="debitCard">
+                              Debit Card
+                            </label>
+                        </div>
+                        <div class="form-check col-md-12">
+                            <input class="form-check-input" type="radio" formControlName="method" id="cash" value="Cash">
+                            <label class="form-check-label" for="cash">
+                              Cash
+                            </label>
+                        </div>
+                     </form>
+
+                    </div>
+                    <div class="form-row col-md-12 border-bottom pb-3">
+                        <div class="form-group col-md-6">
+                            <label for="nameonCard">Name on card</label>
+                            <input [disabled]='payCash' type="text" class="form-control" id="nameonCard">
+                            <small id="emailHelp" class="form-text text-muted">Full Name As Displayed On Card</small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cardNumber">Card Number</label>
+                            <input [disabled]='payCash' type="text" class="form-control" id="cardNumber">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="expiration">Expiration</label>
+                            <input [disabled]='payCash' type="text" class="form-control" id="expiration">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="cvv">CVV</label>
+                            <input [disabled]='payCash' type="text" class="form-control" id="cvv">
+                        </div>
+                    </div>
+
+                    <div class="form-row col-md-12 mt-4 pb-4">
+                        <button type="submit" class="btn btn-primary col-md-12" (click)="checkOut()" [disabled]="totalOrderPrice===deliveryFee || !clietInfo.valid">Checkout</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section id="right" class="col-md-3">
+            <div class="row justify-content-between">
+                <div class="col-md-4">Your Cart</div>
+                <span class="badge badge-pill badge-secondary align-items-center">{{myOrder.length}}</span>
+            </div>
+            <div class="row justify-content-between mt-3 border p-3" *ngFor="let order of myOrder; let x = index">
+                <div class="col-md-4">
+                    <input [(ngModel)]="order.quantity" type="number" class="form-control" id="count"  min="1">
+                </div>
+                <div class="col-md-5">{{order.meal}}</div>
+
+                <div>{{order.price | currency: 'EGP'}}</div>
+                <!-- <small class="col-md-5 form-text text-muted">Brief description</small> -->
+                <a class="col-md-5" id="removeItem" (click)="deleteFromOrder(x)"><small class="form-text text-muted" >Remove</small></a>
+                <div>Total: {{order.total | currency: 'EGP'}}</div>
+            </div>
+
+            <div class="row justify-content-between border mt-3 p-3 ">
+                <div class="col-md-6">Delivery</div>
+
+                <div style="font-weight: bold;">{{deliveryFee | currency: 'EGP'}}</div>
+
+            </div>
+           
+            <div class="row justify-content-between border p-3 ">
+                <div class="col-md-6">Total</div>
+
+                <div style="font-weight: bold;">{{totalOrderPrice | currency: 'EGP'}}</div>
+
+            </div>
+            <div class="row justify-content-between border mt-3 p-3 ">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Promo Code" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary bg-secondary" type="button" id="button-addon2" style="color: white;">Submit</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+    </div>
+</div>
+

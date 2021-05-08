@@ -1,0 +1,17 @@
+
+<h1  class="discovermood text-center">{{"DineOutModule.header" |translate}} </h1>
+
+<div class="section-header">
+   
+<h2 id="Mood">{{"DineOutModule.DiscoverByCategory"|translate}}</h2>
+</div>
+<div class=" row">
+ 
+   
+        <div class="card col-lg  col-sm-12"    *ngFor='let resturantMood of moods'  (click) = 'restaurantByMood(resturantMood.id)' style="border: 0in;">
+           
+                <h4  *ngIf="lang==='en'"  class="card-text" style="color: #fff; padding-left: 35px;">{{resturantMood.mood}}</h4>
+                <h4   *ngIf="lang==='ar'" class="card-text" style="color: #fff; padding-left: 35px;">{{resturantMood.arMood}}</h4>
+                <img  style="height:100%;" class="card-img-top"  src= {{resturantMood.moodImage}} alt="Card image" >
+        </div>
+</div>

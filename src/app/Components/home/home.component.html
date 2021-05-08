@@ -1,0 +1,464 @@
+<div
+  style="background-image: url(../assets/Images/background.jpg); height: 1000px"
+>
+  <!-- navbar -->
+  <div class="row align-items-center">
+    <div class="col-md-8 col-sm-12 col-sm-push-8 section-text"></div>
+    <!--  Login modal-->
+    <div class="col-md-1 col-sm-12 col-sm-push-8 section-text"  id='loginModal'  >
+      <button 
+      *ngIf='!isAuthnticated'
+        type="button"
+        class="btn"
+        data-toggle="modal"
+        data-target="#myModal"
+        style="
+          color: white;
+          margin-top: 30px;
+          font-size: 20px;
+          font-weight: bold;
+        "
+      >
+        {{"Home.LOGIN"|translate}}
+      </button>
+
+      <div     class="modal fade" id="myModal" role="dialog"  >
+        <div class="modal-dialog modal-md" style="text-align: center">
+          <div class="modal-content">
+            <img
+              src="../assets/Images/elmenus.jpg"
+              style="width: min-content; margin-left: auto; margin-right: auto"
+            />
+            <div class="alert alert-danger"  *ngIf='error'>
+              <p>{{error}}</p>
+            </div>
+            <div  *ngIf="isLoading" style="text-align: center">
+              <app-loading-spinner></app-loading-spinner>
+            </div>
+            <form style="margin: 20px" #userlogin = "ngForm"  (ngSubmit) = "onClickLogin(userlogin)"  *ngIf='!isLoading'>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="Enter email"
+                  name="email"
+                  ngModel
+                  required
+                  email
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPwd"
+                  placeholder="Enter password"
+                  name="pwd"
+                  minlength="6"
+                   ngModel
+                  required
+                 password
+                />
+              </div>
+              <input
+                class="btn"
+                type="submit"
+                value="LOGIN"
+                style="
+                  width: 460px;
+                  background-color: #e5533a;
+                  color: white;
+                  margin-bottom: 20px;
+                "
+              [disabled]="!userlogin.valid"
+                  
+              
+              />
+              <p style="font-size: 15px; color: white">
+                <a href="" style="color: #e5533a">FORGET PASSWORD?</a>
+              </p>
+            </form>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Signup modal -->
+    <div class="col-md-1 col-sm-12 col-sm-push-8 section-text"  id='signUpModal'   >
+      <button
+      *ngIf='!isAuthnticated'
+        type="button"
+        class="btn"
+        data-toggle="modal"
+        data-target="#myModal2"
+        style="
+          color: white;
+          background-color: #e5533a;
+          margin-top: 30px;
+          font-size: 20px;
+          font-weight: bold;
+        "
+      >
+        {{"Home.SignUp"|translate}}
+      </button>
+
+      <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog modal-md" style="text-align: center">
+          <div class="modal-content">
+            <img
+              src="../assets/Images/elmenus.jpg"
+              style="width: min-content; margin-left: auto; margin-right: auto"
+            />
+            <div class="alert alert-danger"  *ngIf='error'>
+              <p>{{error}}</p>
+            </div>
+            <div  *ngIf="isLoading" style="text-align: center">
+              <app-loading-spinner></app-loading-spinner>
+            </div>
+            <form
+              style="margin: 20px"
+              #authForm="ngForm"
+              (ngSubmit)="onSubmit(authForm)"
+              *ngIf="!isLoading"
+            >
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  name="email"
+                  ngModel
+                  required
+                  email
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pwd"
+                  placeholder="Enter password"
+                  name="pwd"
+                  ngModel
+                  required
+                  minlength="6"
+                />
+              </div>
+              <input
+                class="btn"
+                type="submit"
+                value="CREATE ACCOUNT"
+                style="
+                  width: 460px;
+                  background-color: #e5533a;
+                  color: white;
+                  margin-bottom: 20px;
+                "
+                [disabled]="!authForm.valid"
+              />
+
+              <p style="font-size: 15px; padding: 10px">
+                By creating an account, you agree to our Terms of service and
+                Privacy policy
+              </p>
+            </form>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div  class="btn" (click)="logOutForEmail()"  *ngIf='isAuthnticated'  style="
+    color: white;
+    background-color: #e5533a;
+    
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+  ">{{"header.Logout"|translate}}</div>
+  
+    
+    <div class="col-md-1 col-sm-12 col-sm-push-8 section-text"></div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <!-- discover -->
+  <div style="text-align: center; color: white; font-size: 60px">
+    <p style="margin-bottom: -30px">{{ "Home.header" | translate }}</p>
+    <p>{{ "Home.header2" | translate }}</p>
+  </div>
+
+  <!-- search -->
+  <div class="row align-items-center">
+    <div class="col-md-3 col-sm-12 col-sm-push-8 section-text "></div>
+    <div class="col-md-4 col-sm-12 col-sm-push-8 section-text ">
+      <div class="input-group">
+        <input
+          type="text"
+          [(ngModel)]="restaurantName"
+          class="form-control"
+          placeholder="Search Restaurants By Name"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-1 col-sm-12 col-sm-push-8 section-text">
+      <p style="font-size: 40px; color: white">
+        {{ "Home.Location" | translate }}
+      </p>
+    </div>
+
+    
+      <button
+      (click)="navigateToRestaurantMatchesSearch()"
+      class='btn'
+        style="color: white;  top: 18%; margin-left: 25px ;font-size: 20; text-align: center;background-color: #e5533a;"
+        >{{ "Home.searchBtn" | translate }}</button
+      >
+ 
+    <br/>
+
+    <!-- <ul  *ngIf="restaurantName.length>0" class="list-group list-group-flush" style="width: 40%; border-style: solid;  ;">
+       <li  (click)="goToRestaurant(restaurant)"  class="list-group-item"  *ngFor="let restaurant  of restaurantNameList | appFilter: restaurantName"  >
+          {{restaurant}}
+        </li>
+      </ul>  -->
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <!-- Send great food to your friends or teams at work -->
+  <div class="row align-items-center">
+    <div class="col-md-3 col-sm-12 col-sm-push-8 section-text"></div>
+    <div
+      class="col-md-6 col-sm-12 col-sm-push-8 section-text"
+      style="
+        height: 60px;
+        border-radius: 10px;
+        padding-top: 10px;
+        text-align: center;
+      "
+    >
+      <p style="font-size: 20px; color: white">
+        {{ "Home.send great Food" | translate }}
+        <a  routerLink="/delivery" style="color: #e5533a">{{
+          "Home.try now" | translate
+        }}</a>
+      </p>
+    </div>
+    <div class="col-md-3 col-sm-12 col-sm-push-8 section-text"></div>
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <!-- explore -->
+  <div style="text-align: center; color: white; font-size: 20px">
+    <p>{{ "Home.Or explore elmenus" | translate }}</p>
+  </div>
+  <!-- delivery & dinout -->
+  <div class="row align-items-center" style="padding: 10px">
+    <div class="col-md-3 col-sm-12 col-sm-push-8 section-text"></div>
+    <div
+      class="col-md-3 col-sm-12 col-sm-push-8 section-text"
+      style="
+        background-color: white;
+        height: 150px;
+        border-right: 3px solid rgb(163, 159, 159);
+        padding-top: 30px;
+      "
+    >
+      <a routerLink="/delivery">
+        <div style="color: black; padding-left: 20px">
+          <i
+            class="fas fa-truck"
+            style="color: rgb(163, 159, 159); padding-right: 5px"
+          ></i>
+          {{ "Home.Delivery" | translate }}
+          <br />
+          <p style="color: rgb(163, 159, 159)">
+            {{
+              "Home.Get food delivered from amazing restaurants around you"
+                | translate
+            }}
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      class="col-md-3 col-sm-12 col-sm-push-8 section-text"
+      style="
+        background-color: white;
+        height: 150px;
+        border-left: 3px solid rgb(163, 159, 159);
+        padding: 30px 10px 10px 10px;
+      "
+    >
+      <a  routerLink="/DineOut">
+        <div style="color: black; padding-left: 20px">
+          <i
+            class="fas fa-utensils"
+            style="color: rgb(163, 159, 159); padding-right: 5px"
+          ></i>
+          {{ "Home.Dine Out" | translate }}
+          <br />
+          <p style="color: rgb(163, 159, 159)">
+            {{
+              "Home.Browse restaurants by mood, cuisine, area or dish"
+                | translate
+            }}
+          </p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-12 col-sm-push-8 section-text"></div>
+  </div>
+</div>
+
+<br />
+<br />
+
+<!-- now you can order -->
+<div class="row align-items-center">
+  <div class="col-md-4 col-sm-12 col-sm-push-8 section-text"></div>
+
+  <div class="col-md-1 col-sm-12 col-sm-push-8 section-text">
+    <hr class="leftline" style="border: 1px solid rgb(163, 159, 159)" />
+  </div>
+  <div class="col-md-2 col-sm-12 col-sm-push-8 section-text">
+    <h5
+      class="align-self-stretch"
+      style="text-align: center; color: rgb(163, 159, 159); font-weight: bold"
+    >
+      <span>
+        {{ "Home.Now you can" | translate }}
+      </span>
+    </h5>
+  </div>
+  <div class="col-md-1 col-sm-12 col-sm-push-8 section-text">
+    <hr class="rightline" style="border: 1px solid rgb(163, 159, 159)" />
+  </div>
+  <div class="col-md-4 col-sm-12 col-sm-push-8 section-text"></div>
+</div>
+
+<!-- order online -->
+<div style="text-align: center; color: #e5533a">
+  <h1 style="margin-bottom: -30px; font-size: 75px">
+    {{ "Home.ORDER" | translate }}
+  </h1>
+  <h1 style="font-size: 75px; margin-top: 20px">
+    {{ "Home.ONLINE" | translate }}
+  </h1>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<!-- track your order -->
+<div class="row align-items-center">
+  <div class="col-md-2 col-sm-12 col-sm-push-8 section-text"></div>
+
+  <div class="col-md-4 col-sm-12 col-sm-push-8 section-text">
+    <div
+      style="
+        height: 250px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 3px 7px 5px #888888;
+        text-align: center;
+        padding: 10px;
+      "
+    >
+      <h3 style="padding-top: 50px">
+        {{ "Home.Track your order" | translate }}
+      </h3>
+      <h5 style="color: #888888">{{ "Home.orderStatus" | translate }}.</h5>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-12 col-sm-push-8 section-text">
+    <div
+      style="
+        height: 250px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 3px 7px 5px #888888;
+        text-align: center;
+        padding: 10px;
+      "
+    >
+      <h3 style="padding-top: 50px">
+        {{ "Home.No phone calls" | translate }}
+      </h3>
+      <h5 style="color: #888888">
+        {{ "Home.No Phone Calls Pargraph" | translate }}
+      </h5>
+    </div>
+  </div>
+
+  <div class="col-md-2 col-sm-12 col-sm-push-8 section-text"></div>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<!-- looking for delivery -->
+<div class="row align-items-center">
+  <div class="col-md-2 col-sm-12 col-sm-push-8 section-text"></div>
+  <div class="col-md-6 col-sm-12 col-sm-push-8 section-text">
+    <h3 style="color: #8e52ff">
+      {{ "Home.Looking for delivery" | translate }}
+    </h3>
+    <br />
+    <h3>
+      {{ "Home.Look for restaurants that have this sign" | translate }}
+      <p style="font-size: 15px">
+        <i class="fas fa-check-circle" style="color: green"></i>order online
+      </p>
+    </h3>
+  </div>
+  <div
+    class="col-md-2 col-sm-12 col-sm-push-8 section-text"
+    style="
+      border-radius: 10px;
+      font-size: 20px;
+      height: 60px;
+      background-color: #e5533a;
+      position: relative;
+    "
+  >
+    <a
+      routerLink="/delivery"
+      style="color: white; position: absolute; top: 25%; margin-left: 20px"
+      >{{ "Home.Order Online Now Btn" | translate }}</a
+    >
+  </div>
+  <div class="col-md-2 col-sm-12 col-sm-push-8 section-text"></div>
+</div>

@@ -1,0 +1,181 @@
+
+<div class="container-fluid">
+
+  <nav class="navbar navbar-expand-sm bg-light navbar-light ">
+
+    <div class="input-group col-xs-3 col-md-6">
+      <input class="form-control my-0 py-1 amber-border" type="text"  aria-label="Search"  
+      [(ngModel)]="restaurantName"
+      placeholder="Search Restaurants By Name">
+      <div class="input-group-append"  (click)="navigateToRestaurantMatchesSearch()" >
+        <span class="input-group-text " id="basic-text1"><i     class="fas fa-search text-grey" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  
+    <div class="col-4 d-none d-md-inline-block align-items-baseline">
+      <i     class="fas fa-motorcycle" style="font-size:xx-large;"></i>
+      <span class="col-3">
+        <span style="font-size: xx-large;">{{"Delivery.Deliver"|translate}}</span>
+        <i class="far fa-arrow-alt-circle-right"></i>
+      </span>
+  
+      <span style="font-size:xx-large; color: orangered;">
+        {{"Delivery.cairo"|translate}}
+      </span>
+  
+    </div>
+  
+
+  
+  
+  </nav>
+    <!-- <div id="offersCarusel" class="carousel slide container col-sm-12 " data-interval="false">
+        <div class="carousel-inner ">
+          <div class="carousel-item active row justify-content-md-center mt-3 ml-1" style="text-align: center;">
+                <div class="col-md-2 col-sm-5 col-12 offerImg" *ngFor='let i of OffersList'>
+                  <img src={{i.img}} alt="..." style="max-width: 100%;">
+                  <span style="display: block;">{{i.item}}</span>
+                  <small style="color: orangered;" *ngIf="i.offer">save now</small>
+                </div>
+           </div>
+           
+        </div>
+    </div> -->
+  <!--------------------Main Content----------------------->
+    
+    <section id="mainContent" class="container-fluid mt-2">
+        <div class="row">
+            <aside id="left" class="col-md-3">
+              <div class="col-md-12 justify-content-between border-bottom pb-2" *ngIf="openNow||orderOnline||hyginCheck||promoCheck" id="filter">
+                <span class="col-md-12 col-lg-6 col-6" style="padding-left: 0;">Selected filters</span>
+                <span class="col-md-12 col-lg-6 col-6" id="clearFilter" (click)="clearAll()">clear All</span>
+              </div>
+              <div class="row border-bottom pb-2 pt-2 "  id="filterChecked">
+                <div   *ngIf='orderOnline' class="alert alert-light alert-dismissible fade show mb-0 pr-5" role="alert" id="onlineFilter">
+                  <small>order online</small> 
+                  <button type="button" (click)='orderOnline=!orderOnline' class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div  *ngIf='openNow' class="alert alert-light alert-dismissible fade show mb-0 pr-5" role="alert" id="openFilter" >
+                  <small>Open now</small> 
+                  <button  type="button" class="close" data-dismiss="alert" (click)='openNow=!openNow' aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div *ngIf='promoCheck' class="alert alert-light alert-dismissible fade show mb-0 pr-5" role="alert" id="promoFilter">
+                  <small>Promo</small> 
+                  <button type="button" class="close"  (click)='promoCheck=!promoCheck' data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+
+                <div *ngIf='hyginCheck' class="alert alert-light alert-dismissible fade show mb-0 pr-5" role="alert" id="hygieneFilter">
+                  <small>Hygiene Check</small> 
+                  <button type="button" class="close" (click)='hyginCheck=!hyginCheck' data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                
+              </div>
+
+
+
+
+                <h4 class="col-sm-12" style="color: grey;">{{"Delivery.Show result for"|translate}}</h4>
+                <div class="col-md-12 border-bottom mb-3 mt-3 pb-3">
+                    <div class="custom-control custom-switch ">
+                        <input #OrderOnline type="checkbox"  (change)='orderOnline=!orderOnline'  [checked]='orderOnline' class="custom-control-input" id="customSwitch1" value="Online Ordering">
+                        <label class="custom-control-label" for="customSwitch1">{{"Delivery.Online ordering only"|translate}}<br>
+                           <small style="color: green;"><i class="fas fa-check-circle"></i> {{"Delivery.elmenus Order online"|translate}}</small></label>
+                      </div>
+                </div>
+
+                <div class="col-md-12 col-5  border-bottom mb-3 mt-1 pb-3 col-sm-6">
+                    <div class="form-check mb-2">
+                        <input style="margin-top: 9px;"  class="form-check-input "  (change)='openNow=!openNow'  [checked]='openNow'  type="checkbox" value="Open now" id="openCheck">
+                        <label class="form-check-label" for="defaultCheck1" >&nbsp;
+                            <small><i  class="fas fa-door-open" style="color: grey;padding-right: 20px;"></i></small>	&nbsp;
+                            <small  style="color: grey; padding-right: 10px; ">{{"Delivery.Open now"|translate}}</small>
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input style="margin-top: 9px;" class="form-check-input" type="checkbox"  (change)='promoCheck=!promoCheck'  [checked]='promoCheck' value="Promo" id="promoCheck">
+                        <label class="form-check-label" for="defaultCheck2">
+                            &nbsp;
+                            <small><i class="fas fa-percentage" style="color: grey;padding-right: 20px;"></i></small>	&nbsp;
+                            <small  style="color: grey;">{{"Delivery.Promo"|translate}}</small>
+                        </label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input style="margin-top: 9px;" class="form-check-input" type="checkbox"  (change)='hyginCheck=!hyginCheck'  [checked]='hyginCheck' value="Hygine Check" id="hygieneCheck">
+                        <label class="form-check-label" for="defaultCheck3">
+                            &nbsp;
+                            <small><i class="fas fa-utensils" style="color: grey;padding-right: 20px;"></i></small>	&nbsp;
+                            <small  style="color: grey;"> {{"Delivery.Hygiene Check"|translate}}</small>
+                        </label>
+                      </div>
+                </div>
+
+                <div class="col-md-12 border-bottom mb-3 mt-1 pb-4 col-5">
+                    <h6 style="color: grey;">{{"Delivery.Sort by"|translate}}:</h6>
+                    <div class="form-check">
+                        <input    class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Popular" checked>
+                        <label  style="padding-right: 20px;"  class="form-check-label" for="exampleRadios1">
+                         {{"Delivery.Popular"|translate}}
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Rating">
+                        <label style="padding-right: 20px;" class="form-check-label" for="exampleRadios2">
+                         {{"Delivery.Rating"|translate}}
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="Delivery Time">
+                        <label  style="padding-right: 20px;" class="form-check-label" for="exampleRadios3">
+                         {{"Delivery.Delivery Time"|translate}}
+                        </label>
+                      </div>
+                </div>
+
+
+            </aside>
+
+            <div class="col-md-9 mb-3" id="middle">
+
+              <div class="row mt-4"  id="TDContent">
+                <div class="col-md-12" id="TDTitle">
+                    <h4>Resturants:</h4>
+                </div>
+                <div class="row" id="TDItems" >
+                  <div  class="col-md-4 col-5 items1 mb-2"  *ngFor="let item of filteredRestList, let s = index" [hidden]="s > itemsCount" >
+                    <img  src={{item.img}} alt="" style="max-width: 100%; max-height: 50%;">
+                    <div class="col-md-12" >
+                        <small class="TDtxt1 mr-5" style="margin-left: 10px;">{{"Delivery.fastfood"|translate}}</small>
+                        <small class="ml-4" style="color: green;"><i class="fas fa-check-circle"></i>{{"Delivery.Order online"|translate}}</small>
+                    </div>
+                    <div  class="col-md-12">
+                        <a  [routerLink]="'/resturants/'+item.id"><span  *ngIf="lang==='en'">{{item.name}}</span></a><br>
+                        <a  [routerLink]="'/resturants/'+item.id"><span  *ngIf="lang==='ar'">{{item.arName}}</span></a><br>
+                        <span class="fa fa-star checkedStar"></span>
+                        <span class="fa fa-star checkedStar"></span>
+                        <span class="fa fa-star checkedStar"></span>
+                        <span class="fa fa-star checkedStar"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                </div>
+
+                <div [hidden]="!noMoreLoad" class="col-md-12">
+                  <button type="button" class="btn  col-md-12 mt-4 w-100" id="loadBtn" (click)="viewMore()">{{"Delivery.load more rest"|translate}}</button>
+                 </div>
+              </div>
+
+            </div>
+</div>

@@ -1,0 +1,44 @@
+.navItm:hover{
+    background-color: orangered;
+    
+}
+
+.menu-row:hover{
+    background-color: rgb(242, 255, 255);
+    cursor: pointer;
+ }
+
+ .navtxt, .itemDesc{
+    font-size: small;
+    color: grey;
+}
+/* 
+#navbar {
+    position: sticky;
+   
+    top: 0;
+} */
+
+
+#rightSec{
+    background-color: rgb(253, 216, 216);;
+    border-radius: 5px;
+}
+
+#changeAdd{
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 1px 3px 5px black;
+
+}
+
+#checkoutBtn{
+    border: 1px black solid;
+    background-color: white;
+    color: black;
+}
+
+#checkoutBtn:hover{
+    background-color: orangered;
+    color: white;
+} 

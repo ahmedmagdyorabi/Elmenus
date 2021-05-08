@@ -1,0 +1,144 @@
+<nav  class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+  <a class="navbar-brand"  routerLink="/Home"  routerLinkActive="active">
+    <img
+      src="../assets/Images/elmenus.jpg"
+      alt="logo"
+      style="widows: 100px; height: 40px"
+    />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapsibleNavbar"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/delivery"  routerLinkActive="active"
+          >{{"header.DELIVERY"|translate}}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/DineOut"  routerLinkActive="active"
+          >{{"header.DineOut"|translate}}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/Gift-Meals"  routerLinkActive="active"
+    >{{"header.GiftMeal"|translate}}</a
+        >
+      </li>
+    </ul>
+
+    <div class="col-md-3 col-sm-12 col-sm-push-8 section-text"></div>
+
+    <ul class="navbar-nav" >
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/My-Order"  routerLinkActive="active"
+          >{{"header.MY ORDERS"|translate}}</a>
+        
+      </li>
+
+      <li class="nav-item ">
+        <a
+          class="nav-link "
+          routerLink="/settings"
+          routerLinkActive="active"
+         
+        >
+          {{"header.ACCOUNT"|translate}}
+        </a>
+        <div class="dropdown-menu">
+          <a
+            class="dropdown-item"
+            routerLink="/Home"
+            routerLinkActive="active"
+            style="width: auto; height: 150px; text-align: center"
+            >{{"header.User Name"|translate}}</a
+          >
+          <div class="dropdown-divider"></div>
+          <a
+            class="dropdown-item"
+            routerLink="/Account-Settings"
+            routerLinkActive="active"
+            style="width: auto; height: 50px"
+            >{{"header.Account Setting"|translate}}</a
+          >
+          <div class="dropdown-divider"></div>
+          <a
+            class="dropdown-item"
+            routerLink="/Home"
+            routerLinkActive="active"
+            style="width: auto; height: 50px"
+            >{{"header.Logout"|translate}}</a
+          >
+        </div>
+      </li>
+
+  
+    </ul>
+
+    <select style="margin-left: 20px;" id="Language" (change)="changeLanguage($event.target.value)">
+       <option value="ar" [selected]="language == 'ar'">عربي</option>
+      <option value="en" [selected]="language == 'en'">English</option>
+    </select>
+
+    <!-- <button  *ngIf="language==='ar' " (click)="changeLanguage('ar')"     style="color: white;
+    background-color: orangered;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;">English</button>
+    <button  (click)="changeLanguage('en')" class="btn"  *ngIf="language==='en'"  (click)="changeLanguage(en)"     style="color: white;
+    background-color: orangered;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;">العربيه</button> -->
+    <div style="margin-left: 20px; color: grey;">{{email}}</div>
+    <div  class="btn" (click)="logOutForEmail()"  *ngIf='isAuthnticated'  style="
+    color: white;
+    background-color: orangered;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;
+  ">{{"header.Logout"|translate}}</div>
+  <button 
+  *ngIf='!isAuthnticated'
+    type="button"
+    class="btn btn-sm"
+    data-toggle="modal"
+    data-target="#myModal"
+    style="
+      color: white;
+     margin-left: 20px;
+     
+      font-size: 20px;
+      font-weight: bold;
+      background-color: orangered;
+    "
+  >
+    {{"Home.LOGIN"|translate}}
+  </button>
+  <button
+  *ngIf='!isAuthnticated'
+    type="button"
+    class="btn btn-sm"
+    data-toggle="modal"
+    data-target="#myModal2"
+    style="
+      color: white;
+      background-color: orangered;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 20px;
+    "
+  >
+    {{"Home.SignUp"|translate}}
+  </button>
+    
+  </div>
+  
+</nav> 
+

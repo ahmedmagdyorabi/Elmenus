@@ -1,0 +1,108 @@
+<div class="row">
+  <div id="navbar" class="col-md-3">
+    <nav id="navbar-left " class="navbar navbar-light col-md-12 border-right">
+
+      <nav class="nav nav-pills flex-column col-md-12 ">
+        <div class="col-md-12 border-bottom navItm">
+          <a class="nav-link" >{{"Restaurant.Top Dishes"|translate}}</a>
+        </div>
+        <div class="col-md-12 border-bottom navItm ">
+          <a class="nav-link " >{{"Restaurant.Bundle meals"|translate}}</a>
+        </div>
+
+        <div class="col-md-12 border-bottom navItm ">
+          <a class="nav-link " >{{"Restaurant.Breakfast"|translate}}</a>
+        </div>
+
+      </nav>
+    </nav>
+  </div>
+
+
+  <div id="mainSection" class="col-md-6">
+
+    <div class="tab-content pl-3" data-spy="scroll" data-target="#navbar-left" data-offset="0" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-menu" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+        <h4 class="row" id="mTop">{{"Restaurant.Top Dishes"|translate}}</h4>
+        <div *ngFor='let i of menu' class="row justify-content-between border-bottom pb-3 mt-4 menu-row"
+          data-toggle="modal" data-target="#modal" id="menu-row">
+          <div id="item" class="col-md-8 col-sm-6">
+            <span class="row mb-2">{{i.meal}}</span>
+            <small class="itemDesc row">{{i.description}}</small>
+            <i class="fas fa-plus-circle" style="color: orangered;">{{i.price | currency:'EGP'}}</i>
+            <button type="button" class="btn btn-outline-danger ml-3 btn-sm" (click)="addToCart(i.meal, i.price)">{{"Restaurant.Add to cart"|translate}}</button>
+          </div>
+          <div id="itemImg" class="col-md-3 col-sm-4">
+            <img src="../../../../assets/Images/itemImg.jpg" alt="" style="max-width: 100%;" class="row">
+            <button type="button" class="btn col-md-8" onclick="like(this)" id="likeBtn0">
+              <span class="badge badge-light" id="likeBtn01"></span>
+              <i class="far fa-thumbs-up"></i>
+            </button>
+          </div>
+        </div>
+
+
+        <h4 class="row mt-3" id="mBreakfast">{{"Restaurant.Breakfast"|translate}}</h4>
+        <div *ngFor='let i of menu' class="row justify-content-between border-bottom pt-4 pb-3 menu-row"
+          id="menu-row">
+          <div id="item" class="col-md-8 col-sm-6">
+            <span class="row mb-2">{{i.meal}}</span>
+            <small class="itemDesc row">{{i.description}}</small>
+            <i class="fas fa-plus-circle" style="color: orangered;">{{i.price | currency:'EGP'}}</i>
+            <button type="button"  class="btn btn-outline-danger ml-3 btn-sm" (click)="addToCart(i.meal, i.price)">{{"Restaurant.Add to cart"|translate}}</button>
+          </div>
+          <div id="itemImg" class="col-md-3 col-sm-4">
+            <img src="../../../../assets/Images/itemImg.jpg" alt="" style="max-width: 100%;" class="row">
+            <button type="button" class="btn col-md-8" id="likeBtn9" onclick="like(this)">
+              <span class="badge badge-light" id="likeBtn91"></span>
+              <i class="far fa-thumbs-up"></i>
+            </button>
+          </div>
+
+        </div>
+
+
+        <h4 class="row mt-3" id="mBundle">{{"Restaurant.Bundle meals"|translate}}</h4>
+        <div *ngFor='let i of menu' class="row justify-content-between border-bottom pt-4 pb-3 menu-row"
+          id="menu-row">
+          <div id="item" class="col-md-8 col-sm-6">
+            <span class="row mb-2">{{i.meal}}</span>
+            <small class="itemDesc row">{{i.description}}</small>
+            <i class="fas fa-plus-circle" style="color: orangered;">{{i.price | currency:'EGP'}}</i>
+            <button type="button" class="btn btn-outline-danger ml-3 btn-sm" (click)="addToCart(i.meal, i.price)">{{"Restaurant.Add to cart"|translate}}</button>
+          </div>
+          <div id="itemImg" class="col-md-3 col-sm-4">
+            <img src="../../../../assets/Images/itemImg.jpg" alt="" style="max-width: 100%;" class="row">
+            <button type="button" class="btn col-md-8" id="likeBtn5" onclick="like(this)">
+              <span class="badge badge-light" id="likeBtn51"></span>
+              <i class="far fa-thumbs-up"></i>
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <aside id="right" class="col-md-3">
+
+    <div class="row pt-3 pb-3" id="rightSec">
+      <i class="fas fa-motorcycle col-md-12" style="font-size: large;"></i><br>
+      <span class="col-md-6">
+        <h5 style="color: grey;">{{"Restaurant.Delivers To"|translate}}</h5>
+      </span>
+      <span class="col-md-6">
+        <h5 style="color: orangered;">{{"Restaurant.Cairo, Egypt"|translate}}</h5>
+      </span>
+      <button id="changeAdd" type="button" class="btn  mt-3 col-md-10 col-sm-7 ml-3" style="text-align: center;">{{"Restaurant.Change
+        Address"|translate}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &gt;</button>
+    </div>
+
+    <button id="checkoutBtn" class="btn-lg mt-3" (click)="checkOut()">{{"Restaurant.Continue To Checkout"|translate}}</button>
+
+
+  </aside>
+</div>

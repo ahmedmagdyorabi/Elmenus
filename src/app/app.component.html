@@ -1,0 +1,174 @@
+
+ <div #parent>
+ <app-header></app-header>
+  <router-outlet></router-outlet>
+     <!--  Login modal-->
+     <div class="col-md-1 col-sm-12 col-sm-push-8 section-text"  id='loginModal'  >
+      <button 
+      *ngIf='!isAuthnticated'
+        type="button"
+        class="btn"
+        data-toggle="modal"
+        data-target="#myModal"
+        style="
+          color: white;
+          margin-top: 30px;
+          font-size: 20px;
+          font-weight: bold;
+        "
+      >
+        {{"Home.LOGIN"|translate}}
+      </button>
+
+      <div     class="modal fade" id="myModal" role="dialog"  >
+        <div class="modal-dialog modal-md" style="text-align: center">
+          <div class="modal-content">
+            <img
+              src="../assets/Images/elmenus.jpg"
+              style="width: min-content; margin-left: auto; margin-right: auto"
+            />
+            <div class="alert alert-danger"  *ngIf='error'>
+              <p>{{error}}</p>
+            </div>
+            <div  *ngIf="isLoading" style="text-align: center">
+              <app-loading-spinner></app-loading-spinner>
+            </div>
+            <form style="margin: 20px" #userlogin = "ngForm"  (ngSubmit) = "onClickLogin(userlogin)"  *ngIf='!isLoading'>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="Enter email"
+                  name="email"
+                  ngModel
+                  required
+                  email
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPwd"
+                  placeholder="Enter password"
+                  name="pwd"
+                  minlength="6"
+                   ngModel
+                  required
+                 password
+                />
+              </div>
+              <input
+                class="btn"
+                type="submit"
+                value="LOGIN"
+                style="
+                  width: 460px;
+                  background-color: #e5533a;
+                  color: white;
+                  margin-bottom: 20px;
+                "
+              [disabled]="!userlogin.valid"
+                  
+              
+              />
+              <p style="font-size: 15px; color: white">
+                <a href="" style="color: #e5533a">FORGET PASSWORD?</a>
+              </p>
+            </form>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--  Signup modal -->
+      <div class="col-md-1 col-sm-12 col-sm-push-8 section-text"  id='signUpModal'   >
+
+  
+        <div class="modal fade" id="myModal2" role="dialog">
+          <div class="modal-dialog modal-md" style="text-align: center">
+            <div class="modal-content">
+              <img
+                src="../assets/Images/elmenus.jpg"
+                style="width: min-content; margin-left: auto; margin-right: auto"
+              />
+              <div class="alert alert-danger"  *ngIf='error'>
+                <p>{{error}}</p>
+              </div>
+              <div  *ngIf="isLoading" style="text-align: center">
+                <app-loading-spinner></app-loading-spinner>
+              </div>
+              <form
+                style="margin: 20px"
+                #authForm="ngForm"
+                (ngSubmit)="onSubmit(authForm)"
+                *ngIf="!isLoading"
+              >
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter email"
+                    name="email"
+                    ngModel
+                    required
+                    email
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="pwd"
+                    placeholder="Enter password"
+                    name="pwd"
+                    ngModel
+                    required
+                    minlength="6"
+                  />
+                </div>
+                <input
+                  class="btn"
+                  type="submit"
+                  value="CREATE ACCOUNT"
+                  style="
+                    width: 460px;
+                    background-color: #e5533a;
+                    color: white;
+                    margin-bottom: 20px;
+                  "
+                  [disabled]="!authForm.valid"
+                />
+  
+                <p style="font-size: 15px; padding: 10px">
+                  By creating an account, you agree to our Terms of service and
+                  Privacy policy
+                </p>
+              </form>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+  <app-footer></app-footer>
+</div>

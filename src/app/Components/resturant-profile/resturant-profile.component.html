@@ -1,0 +1,114 @@
+  <!---heder image-->
+  <section class="row pl-0 pr-0 d-sm-none d-md-block" id="pageHeader">
+    <img src="../../../assets/Images/header.jpg" alt="header img" id="headerImg" class="col-md-12 ml-0 mr-0">
+</section>
+ <!---profile info-->
+
+ <div class="container" id="pageContainer">
+
+    <section class="row border-bottom" id="header">
+        <div class="col-md-2 col-sm-6 col-sm-1 ml-4" id="headerLogo" > 
+             <img [src]="resturant.img" id="logo" alt=""><br>
+             <span id="status" class="d-none">{{"Restaurant.Opens in 12 hours"|translate}}</span>
+        </div>
+
+        <div class="col-md-6 col-sm-4" >
+
+            <h3  *ngIf="lang==='en'" class="mt-4">{{resturant.name}}<small class="text-muted" style="font-size: x-small;">&nbsp;
+              <i class="fas fa-circle"></i>&nbsp; {{"Restaurant.ORDER ONLINE"|translate}}
+            </small></h3>
+            <h3  *ngIf="lang==='ar'" class="mt-4">{{resturant.arName}}<small class="text-muted" style="font-size: x-small;">&nbsp;
+                <i class="fas fa-circle"></i>&nbsp; {{"Restaurant.ORDER ONLINE"|translate}}
+              </small></h3>
+
+            <small class="text-muted">Fast Food</small>&nbsp;
+            <span class="fa fa-star checked star"></span>
+            <span class="fa fa-star checked star"></span>
+            <span class="fa fa-star checked star"></span>
+            <span class="fa fa-star checked star"></span>
+            <span class="fa fa-star checked star"></span>
+            <small class="text-muted">4.6 (17855)</small>
+              <br>
+             
+              <i class="fas fa-map-marker-alt mt-2"></i>&nbsp;
+              <small>{{resturant.Location}}</small>&nbsp;
+              <span class="badge" id="headerBadge">+73 more</span>
+
+         </div>
+
+
+
+        <div class="col-md-3 col-sm-6 pb-sm-4 ">
+            
+            <div class="col-md mt-5 pt-3 ">
+             <i class="fas fa-users" id="headerIcon"></i>&nbsp;
+             <span id="call">
+                 <i class="fas fa-phone" id="headerIcon2"></i>{{resturant.hotLine}}
+             </span>
+            </div>
+
+     
+        </div>
+     </section>
+
+        <!----main navbar--->
+ 
+        <section id="nav" class="row justify-content-around mb-3 mt-sm-3">
+            <nav class="ml-4 col-md-5 mt-2 border-none">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-menu" role="tab" aria-controls="nav-home" (click)="showMenu()" aria-selected="true">{{"Restaurant.Menu"|translate}}</a>
+                  <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-profile" (click)="showAbout()" aria-selected="false">{{"Restaurant.About"|translate}}</a>
+                  <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-Branches" role="tab" aria-controls="nav-contact" (click)="showBranches()"  aria-selected="false">{{"Restaurant.Branches"|translate}}</a>
+                  <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-review" role="tab" aria-controls="nav-contact" (click)="showReviews()"  aria-selected="false">{{"Restaurant.Reviews"|translate}}</a>
+                </div>
+           </nav>
+ 
+               <div class="col-md-6 pt-3 pl-5 border-bottom pb-sm-3" >
+ 
+                 <span class="col-md-s navtxt" style="color: green;">
+                     <i class="fas fa-utensils"></i>&nbsp;
+                     {{"Restaurant.Hygiene Checked"|translate}}
+                 </span>
+                 <span class="col-md-2 navtxt">
+                     <i class="fas fa-motorcycle"></i>&nbsp; 
+                     45 min
+                 </span>
+                 <span class="col-md-2 navtxt">
+                     <i class="fas fa-wallet"></i>&nbsp; 
+                     0 EGP
+                 </span>
+                 <span class="col-md-2 navtxt">
+                     <i class="far fa-clock"></i>&nbsp; 
+                     11:00 AM - 03:00 AM
+                 </span>
+ 
+               </div>
+ 
+     </section>
+ 
+ <!----Scanned menu btn-->
+            <section id="scannedmenu" class="row justify-content-around mb-2">
+ 
+                <div class="col-md-5 col-sm-5 ml-4 ">
+                   <span>{{"Restaurant.Menu Only Available From 08:00 AM To 04:00 AM"|translate}}</span>
+                </div>
+ 
+                <div class="col-md-5 col-sm-5 pl-5">
+                   <a  style="color: orangered; text-decoration: underline;">{{"Restaurant.View Scanned menu"|translate}}&gt;</a>
+                </div>
+ 
+            </section>
+     
+        <section class="row ">
+            
+           
+             <app-about  [hidden]='!aboutRest'></app-about>
+             <app-menu  [hidden]='!restMenu' [restName]='resturant.name'></app-menu>
+
+             <app-branches  [hidden]='!restBranches'></app-branches>
+
+             <app-reviews  [restID]='resturant.id' [hidden]='!restReviews'></app-reviews>
+            
+
+        </section>
+              

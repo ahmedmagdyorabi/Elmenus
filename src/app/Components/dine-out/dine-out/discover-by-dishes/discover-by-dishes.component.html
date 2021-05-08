@@ -1,0 +1,16 @@
+<section class="pagesection">
+    <div class="section-header">
+     
+        <h2>{{"DineOutModule.DiscoverByDishes"|translate}}</h2>
+
+    </div>
+    <div class="section-body glider-contain" style="margin-top:20px">
+
+        <figure class="figure "  (click)="getRestaurantByDishes(dish.id) "  *ngFor ="let dish of dishes">
+            <img class="img-fluid rounded" src="../../../../../../assets/Images/download2.jpg" alt="image">
+            <figcaption  *ngIf="lang=='en'" class="figure-caption" style="text-align: center;">{{dish.name}}</figcaption>
+            <figcaption  *ngIf="lang=='ar'" class="figure-caption" style="text-align: center;">{{dish.arName}}</figcaption>
+        </figure>
+    </div>
+
+</section>

@@ -1,0 +1,23 @@
+
+ 
+   <div class="container">
+       <h3>{{"Category.Restaurants"|translate}}({{restaurantList.length}})</h3>
+
+ <div class="row" >
+    
+      <div   (click)="navigateToRestaurant(restaurant)" class="card col-lg-3" style="margin-left: 20px; margin-top:40px"   *ngFor ="let restaurant of restaurantList">
+        <img class="card-img-top" style="height: 50%;"src={{restaurant.img}} alt="">
+        <div class="card-body">
+          <h4  *ngIf="lang==='en'" class=" text-center" style="color: grey">{{restaurant.name}}</h4>
+          <h4   *ngIf="lang==='ar'" class=" text-center" style="color: grey">{{restaurant.arName}}</h4>
+          <h6  *ngIf="lang==='en'" class="text-center">{{"Category.Location"|translate}}: {{restaurant.Location}}</h6>
+          <h6  *ngIf="lang==='ar'" class="text-center">{{"Category.Location"|translate}}: {{restaurant.arLocation}}</h6>
+          <h6 class="text-center">{{"Category.hotLine"|translate}}: {{restaurant.hotLine}}</h6>
+          <!-- <h6 class="text-center">Dish: {{restaurant.Dish}}</h6> -->
+          
+
+        </div>
+      </div>
+   
+    </div>
+</div>

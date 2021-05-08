@@ -1,0 +1,117 @@
+{
+    "DineOutModule":{
+        "header": "Discover restaurants to dine-out",
+        "DiscoverByCategory":"Discover by Moods",
+        "DiscoverByDishes":"Discover by Dishes",
+        "DiscoverByLocation":"Discover BY Cairo",
+        "SeeAll":"SeeAll",
+        "Dineout":"Dine out"
+    },
+    "header":{
+
+        "DELIVERY":"DELIVERY",
+        "DineOut":"DineOut",
+        "GiftMeal":"GiftMeal",
+        "Notifications": "Notifications",
+        "MY ORDERS":"MY ORDERS",
+        "ACCOUNT":"ACCOUNT",
+        "LANGUAGE":"LANGUAGE",
+        "User Name":"User Name",
+        "Account Setting":"Account Setting",
+        "Logout":"Logout"
+        },
+        "GiftMeal":{
+         "FirstHeader":"Give the gift of great food to your friends or teams at work",
+         "SendGiftParagraph":"We listened to your requests and launched elmenus GiftMeals, a simple way for you to share promos with friends or teams at work so everyone can enjoy great food wherever they are.",
+         "SendGifToFriendstBtn":" Send Gifts to your friends",
+         "SendGiftToTeamsBtn":" Send Gifts to your teams",
+         "SecondHeader":"Bring Happiness To Your Team or to your Friends",
+         "Set Gift Account":"Set a gift amount",
+         "GiftAccParagraph":"Set your budget for each GiftMeal (e.g. 10 EGP) and select how many GiftMeals you would like to buy.",
+         "List your friends or teams":"List your friends or teams",
+         "ListYourFriendsDetails":"Easily copy & paste phone numbers to send multiple GiftMeals to your teams and friends.",
+         "Pay the full amount online":"Pay the full amount online",
+         "Pay the full amount online Details":"Once you purchase the GiftMeals, you'll receive a confirmation email and your friends/teams will receive an SMS with the GiftMeal promo code.",
+         "They receive the GiftMeals":"They receive the GiftMeals",
+         "They receive the GiftMeals Details":"The people you gifted can use their personalized GiftMeal promo code via their associated phone number to order great dishes on elmenus."
+
+        },
+
+        "Home":{
+            "search":"search",
+            "header":"Discover & Order the",
+            "header2":"food you love",
+            "Location":" Cairo",
+            "searchBtn":"GO",
+            "send great Food":" Send great food to your friends or teams at work",
+            "try now":"try now",
+            "Or explore elmenus":"Or explore elmenus",
+            "Delivery":"Delivery",
+            "Get food delivered from amazing restaurants around you":"Get food delivered from amazing restaurants around you",
+            "Dine Out":"Dine Out",
+            "Browse restaurants by mood, cuisine, area or dish":"Browse restaurants by mood, cuisine, area or dish",
+            "Now you can":"Now you can",
+            "ORDER":"ORDER",
+            "ONLINE":"ONLINE",
+            "Track your order":"Track your order",
+            "orderStatus":" Want to know your order status? No problem, Now you can know exactly where your order is throughout the delivery process",
+            "No phone calls":"No phone calls",
+            "No Phone Calls Pargraph": "Order your favorite food easier, faster, and without phone calls.",
+            "Looking for delivery":"Looking for delivery",
+            "Look for restaurants that have this sign":"Look for restaurants that have this sign",
+            "Order Online Now Btn":"Order Online Now",
+            "LOGIN":"LOGIN",
+            "SignUp":"SIGNUP"
+
+        }
+        ,
+ "Delivery":{
+
+  "fastfood":"fast food",
+  "Order online":"Order online",
+  "Show result for":"Show result for",
+  "Online ordering only":"Online ordering only",
+  "elmenus Order online":"elmenus Order online",
+  "Open now":"Open now",
+  "Promo":"Promo",
+  "Hygiene Check":"Hygiene Check",
+  "Sort by":"Sort by",
+  "Popular":"Popular",
+  "Rating":"Rating",
+  "Delivery Time":"Delivery Time",
+  "load more rest":"Load more Restaurants",
+  "Deliver":"Deliver",
+  "cairo":"cairo"
+
+ },
+ "Restaurant":{
+    "ORDER ONLINE":"ORDER ONLINE",
+    "Fast Food":"Fast Food",
+    "Cairo ":"Cairo",
+    "Menu":"Menu",
+    "About":"About",
+    "Branches":"Branches",
+    "Reviews":"Reviews",
+    "Hygiene Checked":"Hygiene Checked",
+    "Menu Only Available From 08:00 AM To 04:00 AM":"Menu Only Available From 08:00 AM To 04:00 AM",
+    "View Scanned menu": "View Scanned menu",
+    "Top Dishes":"Top Dishes",
+    "Bundle meals":"Bundle meals",
+    "Breakfast":"Breakfast",
+    "Delivers To":"Delivers To",
+    "Cairo, Egypt":"Cairo, Egypt",
+    "Change Address":"Change Address",
+    "Continue To Checkout":"Continue To Checkout",
+    "Add to cart":"Add to cart"
+  
+  
+  
+   },
+   "Category":{
+
+    "Restaurants":"Restaurants",
+    "hotLine":"hotLine",
+    "Location":"Location"
+  
+   }
+}

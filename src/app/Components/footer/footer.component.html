@@ -1,0 +1,186 @@
+<footer class="footer-area footer--white">
+  <div class="footer-big">
+    <!-- start .container -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class=" col-md-1 col-sm-12 col-sm-push-8 section-text"></div>
+
+        <div class="col-md-2 col-sm-12 ">
+          <div class="footer-widget">
+            <div class="widget-about">
+
+              <input type="image" src="../assets/Images/elmenus.jpg" alt="Submit" width="200" height="60">
+
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu footer-menu--1">
+              <h6 class="footer-widget-title">Cities</h6>
+              <ul>
+                
+                <li>
+                  <a>Cairo</a>
+
+                </li>
+                
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h6 class="footer-widget-title">Areas</h6>
+              <ul>
+                <li>
+                  <a >6th Of October</a>
+                </li>
+                <li>
+                  <a >Agouza</a>
+                </li>
+                <li>
+                  <a >Al Mokatam</a>
+                </li>
+                <li>
+                  <a >Downtown</a>
+                </li>
+                <li>
+                  <a >Faisal</a>
+                </li>
+                <li>
+                  <a >Hadayek EL Kobba</a>
+                </li>
+                <li>
+                  <a>Maadi</a>
+                </li>
+
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
+
+        <div class="col-md-3 col-sm-4"  >
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h6 class="footer-widget-title">Dishes</h6>
+              <ul>
+                <li  *ngFor="let dish of dishesList">
+                  <a  class="btn" (click)="navigateToRestaurantsWithSameDishes(dish)"  *ngIf="lang==='en'">{{dish.name}}</a>
+                  <a   class="btn"   (click)="navigateToRestaurantsWithSameDishes(dish)"  *ngIf="lang==='ar'">{{dish.arName}}</a>
+                </li>
+    
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
+
+      </div>
+      <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+  </div>
+  <!-- end /.footer-big -->
+  <!-- ------------------------------------------ -->
+
+  <div class="footer-small" style="margin-bottom: 20px ;">
+
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class=" col-md-1 col-sm-12 col-sm-push-8 section-text"></div>
+        <div class="col-md-2 col-sm-12" style="text-align: left;">
+          <div class="footer-awesome">
+            <div class="widget-about">
+              <a href="https://www.instagram.com/elmenus/"><i class="fab fa-instagram-square"></i></a>
+              <a href="https://twitter.com/elmenus"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/elmenus/"> <i class="fab fa-facebook-square"></i></a>
+              <a href="https://www.linkedin.com/company/elmenus.com"> <i class="fab fa-linkedin"></i></a>
+
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-1 col-sm-3 align-items-center">
+          <div class="footer-mini-link">
+            <div class="footer-mini footer-mini--1">
+
+              <a routerLink="/About-Us" routerLinkActive="router-link-active" >About Us</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-md-2 col-sm-3">
+          <div class="footer-mini-link">
+            <div class="footer-mini footer-mini--2" style="text-align: center;">
+
+              <a routerLink="/TermsAndConditions" >Terms &amp; Conditions</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-md-1 col-sm-3">
+          <div class="footer-mini-link">
+            <div class="footer-mini footer-mini--3">
+
+              <a routerLink="/Privacy" >Privacy</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-1 col-sm-3">
+          <div class="footer-mini-link">
+            <div class="footer-mini footer-mini--4">
+
+              <a >Careers</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-3" style="text-align: right;">
+          <div class="footer-mini-link">
+
+            <div class="footer-mini footer-mini--5">© 2020 elmenus</div>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+

@@ -1,0 +1,336 @@
+{
+    "menu" : 
+         {
+             
+                 
+                     "meal" : "صندوق المشاركة",
+                     "price": 14,
+                     "description" : "اختار ساندوتشين من بيج ماك (لحم / دجاج) وماك تشيكن + 2 ساندوتش من بيف برجر وتشيز برجر ودجاج ماكدو + 2 بطاطس عادي + 1.25 لتر كوكاكولا"
+         }
+        ,
+
+        "moods" : [
+            {
+            "mood":"اماكن رخيصه",
+            "moodImage":"https://s3-eu-west-1.amazonaws.com/elmenusv5-stg/Normal/ba76ec62-a72d-47e1-b1f9-05788a3ae54d.jpg"
+            },
+            {
+            "mood":"اماكن خفيه",
+            "moodImage":"https://s3-eu-west-1.amazonaws.com/elmenusv5-stg/Normal/b6b14c1e-2225-11e8-924e-0242ac110011.jpg"
+            },
+            {
+            "mood":"المقاهي",
+            "moodImage":"https://s3-eu-west-1.amazonaws.com/elmenusv5-stg/Normal/b6b14b83-2225-11e8-924e-0242ac110011.jpg"
+        
+            },
+            {
+            "mood":"صديقة للأطفال",
+            "moodImage":"https://s3-eu-west-1.amazonaws.com/elmenusv5-stg/Normal/b6b152a1-2225-11e8-924e-0242ac110011.jpg"
+        
+            }
+        
+        
+        
+        
+        
+        ],
+    "resturants":
+        [
+            {
+                "id": "بون ابي تي",
+                "Location": "القاهرة",
+                "hotLine": 19101,
+                "Branches": 20,
+				"Dish": "مشاوي",
+				"Mood":"اماكن خفيه",
+                "openNow" : true
+                
+            },
+            {
+                "id": "بافلو برجر",
+                "Location": "القاهرة",
+                "hotLine": 19914,
+                "Branches": 20,
+				"Dish": "برجر",
+				"Mood":"صديقة للأطفال",
+                "openNow" : true
+            },
+            {
+                "id": "برغر كينغ",
+                "Location": "القاهرة",
+                "hotLine": 16977,
+                "Branches": 20,
+				"Dish": "برجر",
+				"Mood":"صديقة للأطفال",
+                "openNow" : true
+            },
+            {
+                "id": "كاراكاس",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 15,
+				"Dish": "معكرونة",
+				"Mood":"المقاهي",
+                "openNow" : true
+            },
+            {
+                "id": "كراف",
+                "Location": "القاهرة",
+                "hotLine": 16788,
+                "Branches": 20,
+				"Dish": "معكرونة",
+				"Mood":"المقاهي",
+                "openNow" : true
+            },
+            {
+                "id": "دانكن",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 20,
+				"Dish": "دونات",
+				"Mood":"المقاهي",
+                "openNow" : true
+            },
+            {
+                "id": "العبد",
+                "Location": "القاهرة",
+                "hotLine": 16437,
+                "Branches": 20,
+				"Dish": "حلويات",
+				"Mood":"المقاهي",
+                "openNow" : true
+            },
+            {
+                "id": "الليدو",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 20,
+				"Dish": "حلويات",
+				"Mood":"المقاهي"
+            },
+            {
+                "id": "الدهان",
+                "Location": "القاهرة",
+                "hotLine": 16194,
+                "Branches": 20,
+				"Dish": "مصرية",
+				"Mood":"المقاهي"
+            },
+            {
+                "id": "جاد",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 20,
+				"Dish": "فول",
+				"Mood":"اماكن رخيصه"
+            },
+            {
+                "id": "هارديز",
+                "Location": "القاهرة",
+                "hotLine": 19066,
+                "Branches": 40,
+				"Dish": "برجر",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "ماجيستي",
+                "Location": "القاهرة",
+                "hotLine": 19915,
+                "Branches": 15,
+				"Dish": "بيتزا",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "ماكس برجر",
+                "Location": "القاهرة",
+                "hotLine": 19065,
+                "Branches": 15,
+				"Dish": "برجر",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "ماكدونالدز",
+                "Location": "القاهرة",
+                "hotLine": 19991,
+                "Branches": 50,
+				"Dish": "برجر",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "مؤمن",
+                "Location": "القاهرة",
+                "hotLine": 16600,
+                "Branches": 20,
+				"Dish": "سندويشات",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "موري سوشي",
+                "Location": "القاهرة",
+                "hotLine": 16885,
+                "Branches": 30,
+				"Dish": "سوشي",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "باستا",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 2,
+				"Dish": "معكرونة",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "بابا جونز",
+                "Location": "القاهرة",
+                "hotLine": 19277,
+                "Branches": 30,
+				"Dish": "بيتزا",
+				"Mood":"اماكن خفيه"
+            },
+            {
+                "id": "بسطاويسي",
+                "Location": "القاهرة",
+                "hotLine": 19034,
+                "Branches": 20,
+				"Dish": "معكرونة",
+				"Mood":"اماكن خفيه"
+            },
+            {
+                "id": "بول",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 15,
+				"Dish": "بيتزا",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "بكين",
+                "Location": "القاهرة",
+                "hotLine": 16078,
+                "Branches": 15,
+				"Dish": "بيتزا",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "بيتزا هت",
+                "Location": "القاهرة",
+                "hotLine": 19000,
+                "Branches": 30,
+				"Dish":"بيتزا",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "روستو",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 20,
+				"Dish": "مشاوي",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "ساباي ساباي",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 2,
+				"Dish": "مشاوي",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "طبالي",
+                "Location": "القاهرة",
+                "hotLine": 19061,
+                "Branches": 20,
+				"Dish": "فول",
+				"Mood":"اماكن خفيه"
+            },
+            {
+                "id": "زاك",
+                "Location": "القاهرة",
+                "hotLine": 15198,
+                "Branches": 20,
+				"Dish": "دجاج مقلي",
+				"Mood":"صديقة للأطفال"
+            },
+            {
+                "id": "زي سوشي",
+                "Location": "القاهرة",
+                "hotLine": "N/A",
+                "Branches": 20,
+				"Dish": "سوشي",
+				"Mood":"صديقة للأطفال"
+            }
+        ],
+        "Dishes":[{
+            "name":"مشاوي"
+        },
+        {
+            "name":"مصرية"
+        },
+        {
+            "name":"معكرونة"
+        },
+        {
+            "name":"بيتزا"
+        },
+        {
+            "name":"دجاج مقلي"
+        } ,
+        {
+            "name":"فول"
+        } ,
+        {
+            "name":"سوشي"
+        },
+        {
+            "name":"سندويتشات"
+        },
+        {
+            "name":"حلويات"
+        },
+        {
+            "name":"دونات"
+        },
+        {
+            "name":"برجر"
+        }     
+    
+    ],
+    "users": [
+        {
+          "id": 1,
+          "name": "Mohamed",
+          "password": "ab123456789",
+          "email": "mohamed@osama.com"
+        },
+        {
+          "id": 2,
+          "name": "Ahmed",
+          "email": "ahmed@abdelsalam.com",
+          "password": "987654321"
+        },
+        {
+          "id": 3,
+          "name": "Salma",
+          "email": "Salma@salma.com",
+          "password": "itisohag2021"
+        }
+      ],
+      "admins": [
+        {
+          "id": 20211,
+          "name": "Mohamed",
+          "email": "mohamed@samir.com",
+          "password": "admin12021",
+          "auth": true
+        },
+        {
+          "id": 20212,
+          "name": "ahmed",
+          "email": "ahmed@magdy.com",
+          "password": "admin22021",
+          "auth": true
+        }
+      ]
+    
+}

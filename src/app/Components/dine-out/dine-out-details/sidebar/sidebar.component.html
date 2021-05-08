@@ -1,0 +1,29 @@
+
+ <div style="color: grey;"><b>Moods</b></div>
+ <div class="form-check">
+   <label class="form-check-label">
+     <input type="radio" class="form-check-input" name="optradio">Cheap Eats
+   </label>
+ </div>
+ <div class="form-check">
+   <label class="form-check-label">
+     <input type="radio" class="form-check-input" name="optradio">Hidden Gems
+   </label>
+ </div>
+ <div class="form-check">
+   <label class="form-check-label">
+     <input type="radio" class="form-check-input" name="optradio">Coffe Shops
+   </label>
+ </div>
+ <div class="form-check">
+   <label class="form-check-label">
+     <input type="radio" class="form-check-input" name="optradio">Kids-Friendly
+   </label>
+ </div>
+ <hr>
+ <div>Dishes:</div>
+ <div class="form-check" *ngFor=" let dish of  dishesList">
+   <label class="form-check-label">
+     <input type="radio" class="form-check-input" [value]="dish.name" name="optradio">{{dish.name}}
+   </label>
+ </div>

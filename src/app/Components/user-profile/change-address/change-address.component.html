@@ -1,0 +1,58 @@
+<div class="container " id="newAddress">
+    <div class="row justify-content-center">
+      <form (ngSubmit)="saveAddress()" [formGroup]="addresForm">
+        <div class="form-group mt-3 row">
+          <label for="name" id="nameLabel"><small class="text-muted">name</small></label>
+          <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="username">
+          
+        </div>
+        <h5 class="row">Add New Address Details</h5>
+        <div class="form-group row align-items-baseline">
+          <i class="fas fa-exclamation-circle " id="mark"></i>
+          <small class="form-text text-muted ">Please select your exact location on the map, so that captains can reach you easily</small>
+       </div>
+       <div class="row">
+         <span><b>City</b>: Cairo, <b>Area</b>: Nasr City, <b>Zone</b>: Nasr City </span>
+       </div>
+        <div class="form-group row mt-1">
+          <label for="addressInfo"><small class="text-muted">Address Info</small></label>
+          <input type="text" class="form-control" formControlName="addressInfo" id="AdressInfo">
+        </div>
+
+        <div class=" row mt-1">
+          <div class="form-group col-3  mt-1">
+            <label for="bulding"><small class="text-muted">Building No.</small></label>
+            <input type="text" class="form-control" formControlName="buildingNO" id="bulding" placeholder="e.g. 12">
+          </div>
+          <div class="form-group col-3 mt-1">
+            <label for="floor"><small class="text-muted">Floor No.</small></label>
+            <input type="text" class="form-control" id="floor" formControlName="floorNo" placeholder="e.g. 4">
+          </div>
+          <div class="form-group col-3 mt-1">
+            <label for="apartment"><small class="text-muted">Apartment No.</small></label>
+            <input type="text" class="form-control" id="apartment" formControlName="apartmentNo" placeholder="e.g. 14">
+          </div>
+        </div>
+
+        <div class="form-group row  mt-1">
+          <label for="mobile"><small class="text-muted">Mobile Number</small></label>
+          <input type="text" class="form-control" formControlName="mobile" id="mobile">
+        </div>
+        <div class="row">
+          <div class="custom-control custom-switch ">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" value="Online Ordering" onclick="check1(this)">
+            <label class="custom-control-label" for="customSwitch1"><b>This is a Company Address</b></label>
+          </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+          <button type="submit" class="btn mr-3"  [disabled]='!addresForm.valid' id="savebtn">Save Address</button>
+          <button type="button" class="btn " (click)='cancel()' id="cancelbtn">Cancel</button>
+
+        </div>
+
+        
+        
+      </form>
+    </div>
+  </div>

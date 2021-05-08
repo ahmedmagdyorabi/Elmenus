@@ -1,0 +1,43 @@
+
+.containt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    padding-left: 50px;
+    margin-bottom: 10px;
+}
+hr{
+    border-top: 6px solid #e5533a;
+    border-radius: 10px;
+    width: 100px;
+    margin-top: 10px;
+}
+.title{
+    text-align: center;
+}
+p{
+    color: darkgrey;
+    margin: 20px 0;
+}
+img{
+    max-width: 100%;
+    width: 70%;
+}
+.gifting-img{
+    text-align: center;
+}
+
+.giftC{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.actions{
+    margin-top: 20px;
+}
+.icon{
+    max-width: 100%;
+    position: relative;
+    top: 2em
+}

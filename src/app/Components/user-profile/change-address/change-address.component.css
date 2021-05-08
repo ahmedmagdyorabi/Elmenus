@@ -1,0 +1,12 @@
+#savebtn{
+    background-color: orangered;
+    color: white;
+    box-shadow: 2px 3px 5px black;
+}
+#cancelbtn{
+   box-shadow: 2px 3px 5px black;
+}
+
+#mark{
+    color: orangered;
+}

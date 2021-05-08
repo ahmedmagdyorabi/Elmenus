@@ -1,0 +1,113 @@
+{
+  "DineOutModule": {
+    "header": "اكتشف المطاعم لتناول العشاء بالخارج",
+    "DiscoverByCategory": "إكتشف الخروجات",
+    "DiscoverByDishes": "إكتشف الأكلات",
+    "DiscoverByLocation": "اكتشف القاهرة",
+    "SeeAll": "رؤية الكل",
+    "Dineout":"تناول العشاء خارجا"
+  },
+  "header": {
+    "DELIVERY": "ديليفري",
+    "DineOut": "خروجات",
+    "GiftMeal": "اكله هديه",
+    "Notifications": "اشعارات",
+    "MY ORDERS": "طلباتي",
+    "ACCOUNT": "الحساب",
+    "LANGUAGE": "اللغه",
+    "User Name": "اسم االمستخدم",
+    "Account Setting": "اسم االمستخدم",
+    "Logout": "تسجيل خروج"
+  },
+  "GiftMeal": {
+    "FirstHeader": "امنح هدية الطعام الرائع لأصدقائك أو فرق العمل",
+    "SendGiftParagraph": "لقد استمعنا إلى طلباتك وأطلقنا وجبات الهدايا ، وهي طريقة بسيطة لمشاركة العروض الترويجية مع الأصدقاء أو الفرق في العمل حتى يتمكن الجميع من الاستمتاع بالطعام الرائع أينما كانوا.",
+    "SendGifToFriendstBtn": " ارسل هدايا لاصدقائك",
+    "SendGiftToTeamsBtn": " أرسل هدايا إلى فرقك",
+    "SecondHeader": "اجلب السعادة لفريقك أو لأصدقائك",
+    "Set Gift Account": "   حدد مبلغ الهدية",
+    "GiftAccParagraph": "حدد ميزانيتك لكل وجبة هدية (على سبيل المثال 10 جنيهات) وحدد عدد وجبات الهدايا التي ترغب في شرائها.",
+    "List your friends or teams": "قائمة أصدقائك أو فرقك",
+    "ListYourFriendsDetails": "انسخ والصق أرقام الهواتف بسهولة لإرسال وجبات هدايا متعددة إلى فرقك وأصدقائك.",
+    "Pay the full amount online": "ادفع كامل المبلغ عبر الإنترنت",
+    "Pay the full amount online Details": "بمجرد شراء وجبات الهدايا ، ستتلقى رسالة تأكيد بالبريد الإلكتروني وسيتلقى أصدقاؤك / فريقك رسالة نصية قصيرة تحتوي على الرمز الترويجي لوجبات الهدايا.",
+    "They receive the GiftMeals": "يتلقون وجبات الهدايا",
+    "They receive the GiftMeals Details": "يمكن للأشخاص الذين أهدتهم استخدام الرمز الترويجي المخصص لوجبات الهدايا عبر رقم الهاتف المرتبط بهم لطلب أطباق رائعة على المنيو."
+  },
+  "Home":{
+    "search":"بحث",
+    "header":"اكتشف واطلب",
+    "header2":"الطعام الذي تحبه",
+    "Location":" القاهرة",
+    "searchBtn":"ديليفري",
+    "send great Food":" أرسل طعامًا رائعًا إلى أصدقائك أو فرق العمل في العمل",
+    "try now":"جرب الآن",
+    "Or explore elmenus":"أو اكتشف المنيو",
+    "Delivery":"توصيل",
+    "Get food delivered from amazing restaurants around you":"احصل على الطعام من المطاعم الرائعة من حولك",
+    "Dine Out":"تناول العشاء خارجا",
+    "Browse restaurants by mood, cuisine, area or dish":"تصفح المطاعم حسب الحالة المزاجية أو المطبخ أو المنطقة أو الطبق",
+    "Now you can":"الآن انت تستطيع",
+    "ORDER":"اطلب",
+    "ONLINE":"عبر الانترنت",
+    "Track your order":"أتبع طلبك",
+    "orderStatus":" تريد أن تعرف حالة طلبك؟ لا توجد مشكلة ، الآن يمكنك معرفة مكان طلبك بالضبط طوال عملية التسليم",
+    "No phone calls":"لا مكالمات هاتفية",
+    "No Phone Calls Pargraph": "اطلب طعامك المفضل بشكل أسهل وأسرع وبدون مكالمات هاتفية.",
+    "Looking for delivery":"تبحث عن التسليم",
+    "Look for restaurants that have this sign":"ابحث عن المطاعم التي عليها هذه العلامة",
+    "Order Online Now Btn":"اطلب عبر الإنترنت الآن",
+    "LOGIN": "تسجيل دخول ",
+    "SignUp":"حساب جديد"
+
+ },
+ "Delivery":{
+
+  "fastfood":"اكلات سريعه",
+  "Order online":"اطلب عبر الإنترنت",
+  "Show result for":"عرض نتيجة",
+  "Online ordering only":"الطلب عبر الإنترنت فقط",
+  "elmenus Order online":"المنيوز اطلب اون لاين",
+  "Open now":"مفتوح الان",
+  "Promo":"برومو",
+  "Hygiene Check":"فحص النظافة",
+  "Sort by":"ترتيب حسب",
+  "Popular":"مشهور",
+  "Rating":"تقييم",
+  "Delivery Time":"موعد التسليم",
+  "load more rest":"المزيد",
+  "Deliver":"توصيل",
+  "cairo":"القاهره"
+
+ },
+ "Restaurant":{
+  "ORDER ONLINE":" اطلب اونلاين",
+  "Fast Food":"اكلات سريعه",
+  "Cairo ":"القاهره",
+  "Menu":"المنيو",
+  "About":"عن المطعم",
+  "Branches":"فروع",
+  "Reviews":"مراجعات",
+  "Hygiene Checked":"فحص النظافة",
+  "Menu Only Available From 08:00 AM To 04:00 AM":"تتوفر القائمة فقط من الساعة 08:00 صباحًا إلى الساعة 04:00 صباحًا",
+  "View Scanned menu":"عرض المنيو المصور",
+  "Top Dishes":"أفضل الأطباق",
+  "Bundle meals":"وجبات الباقة",
+  "Breakfast":"وجبة افطار",
+  "Delivers To":"توصيل الي ",
+  "Cairo, Egypt":"القاهرة، مصر",
+  "Change Address":"تغيير العنوان",
+  "Continue To Checkout":"الاستمرار",
+  "Add to cart":"أضف إلى السلة"
+ },
+ "Category":{
+
+  "Restaurants":"المطاعم",
+  "hotLine":"الخط الساخن",
+  "Location":"الموقع"
+
+ }
+
+
+   
+}

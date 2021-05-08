@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light ">
+
+  <div class="input-group col-xs-3 col-md-6">
+    <input class="form-control my-0 py-1 amber-border" type="text"   aria-label="Search"  [(ngModel)]= "restaurantName" placeholder="Search Restaurants By Name">
+    <div class="input-group-append" (click)="navigateToRestaurantMatchesSearch()" >
+      <span class="input-group-text " id="basic-text2"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+    </div>
+  </div>
+  
+    <div class="col-4 d-none d-md-inline-block align-items-baseline">
+      <i class="fas fa-motorcycle" style="font-size:xx-large;"></i>
+      <span class="col-3">
+        <span style="font-size: xx-large;">{{"DineOutModule.Dineout"|translate}}</span>
+        <i class="far fa-arrow-alt-circle-right"></i>
+      </span>
+  
+      <span style="font-size:xx-large; color: orangered;">
+       {{"Delivery.cairo"|translate}}
+      </span>
+  
+    </div>
+  </nav>
+
+  <br>
+  <br>
+
+
+
+  
+<div class="container">
+    
+
+    <app-discover-by-moods></app-discover-by-moods>
+    <app-discover-by-dishes></app-discover-by-dishes>
+    <app-discover-by-location></app-discover-by-location>
+
+
+</div>

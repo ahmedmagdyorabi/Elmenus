@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+/* header */
+.dropdown-menu {
+    width: 200px;
+
+}
+
+li:hover{
+    background-color: orangered;
+    color: white;
+}
+
+#changeBtn{
+    border: 1px orangered solid;
+    color: orangered;
+}
+
+
+
+.btn{
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: rgb(228, 228, 228);
+}
+ #changebtn{
+     background-color: orangered;
+     box-shadow: 2px 3px 5px black;
+     color: white;
+ }
+
+ /* #nameLabel{
+     padding-right: 100%;
+ } */
+ #mark{
+     color: orangered;
+ }
+
+ #savebtn, #savebtn2{
+     background-color: orangered;
+     color: white;
+     box-shadow: 2px 3px 5px black;
+ }
+ #cancelbtn{
+    box-shadow: 2px 3px 5px black;
+ }

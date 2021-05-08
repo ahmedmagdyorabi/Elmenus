@@ -1,0 +1,86 @@
+<div [hidden]='myOrderList.length != 0' id="page-content" class="page-content myorders-page">
+    <h2 class="page-title" style="text-align: center;">My Orders</h2>
+    <div id="orders-container" class="container">
+      <div class="orders-tabs">
+        <div>
+          <div id="orders-controller" class="orders-list col-sm-6 col-xs-16" style="display: none;">
+            <div class="myorder-controller">
+              <div class="current-orders">
+
+              </div>
+              <div class="previous-orders">
+
+              </div>
+            </div>
+          </div>
+          <div class="order-details current-order-details col-sm-10 col-xs-16 my-orders-mobile" id="orders-details"
+            style="display: none;">
+            <div class="checkout-loader"><span class="loader"></span> <span>Loading order data</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="no-data-state text-center margin-8">
+        <div class="content-inner">
+          <div class="no-data-icon"><img src="../assets/Images/no-orders.svg" alt="no orders" draggable="false"></div>
+          <br>
+          <div class="no-data-content">
+            <h4 class="title">You're missing out! You haven't placed any orders yet</h4>
+            <p class="paragraph">Discover the best dishes around you and place your first order now</p>
+            <div class="delivery-area">
+              Restaurants delivering to .
+              <span class="icon"><img src="../assets/Images/motorcycle-delivery-colored.svg" alt="icon"></span> <span
+                class="area-name">Maadi</span></div>
+            <br>
+            <div class="text-center"><a href="#" class="discover-btn btn btn-primary">I want to discover and order
+                now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- 
+<div class="card  mt-3 mb-4 p-4 d-inline-block ml-3" [hidden]="myOrderList.length == 0" *ngFor="let order of myOrderList" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{order.resturant}}</h5>
+      
+      <div *ngFor="let i of order.order">
+        <span>{{i.quantity}} * {{i.meal}}</span>
+  
+      </div>
+        <button class="btn btn-primary">Order again</button>
+    </div>
+  </div> -->
+
+  <div id="page-content" class="page-content myorders-page row justify-content-center">
+  <div class="card col-md-7 col-sm-12 mt-3 mb-4 p-4 d-inline-block ml-3" [hidden]="myOrderList.length == 0" *ngFor="let order of myOrderList ; let s =index">
+    <div class="card-header">
+      {{order.resturant}}
+    </div>
+    <div class="card-body">
+        <div *ngFor="let i of order.order" class="row justify-content-between">
+            <span>{{i.quantity}} * {{i.meal}}</span>
+            <span>{{i.total  | currency:'EGP'}}</span>
+      
+        </div>
+
+        <div class="card-footer mt-2">
+            <div class="row justify-content-between">
+                <span>delivery fee</span>
+                <span>{{order.deliveryfee | currency: "EGP"}}</span>
+            </div>
+            <div class="row justify-content-between">
+                <span>Total</span>
+            <span>{{order.totalprice | currency:'EGP'}}</span>
+            </div>
+            
+        </div>
+
+        <button class="btn btn-primary mt-2" (click)='orderAgain(s)'>Order again</button>
+    </div>
+  </div>
+  </div>
+
+
+
+ 
